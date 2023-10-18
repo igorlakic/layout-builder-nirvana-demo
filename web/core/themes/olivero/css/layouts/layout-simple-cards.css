@@ -1,0 +1,45 @@
+.layout--simple-cards {
+  overflow: hidden;
+}
+
+.layout--simple-cards-inner {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 105rem) {
+  .layout--simple-cards-inner {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.layout__simple-cards-title-section .title {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.layout__simple-cards-title-section .title__title {
+  grid-column: auto/span 6;
+  grid-column-start: 1;
+  padding-right: 0;
+  padding-left: 0;
+  color: black;
+  font-family: Sans-Serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.layout__simple-cards-main-section {
+  margin-top: 1.3rem;
+  margin-bottom: 0;
+}
+
+.layout__simple-cards-title-section + .layout__simple-cards-main-section {
+  margin-top: 0;
+}
+
+.layout--simple-cards .title__inner {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}

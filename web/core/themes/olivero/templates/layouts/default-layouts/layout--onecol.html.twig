@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a one-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{%
+  set classes = [
+    'layout',
+    'layout--onecol',
+    'padding-horizontal',
+  ]
+%}
+
+{% if content %}
+  {{ attach_library('olivero/layouts') }}
+
+  <div{{ attributes.addClass(classes) }}>
+
+    <div class="layout--onecol-inner lyt--default-rules lyt--orange-color">
+      <div {{ region_attributes.content.addClass('layout__region', 'layout__region--content', 'lyt-row', 'lyt-row--centered') }}>
+        {{ content.content }}
+      </div>
+    </div>
+  </div>
+{% endif %}

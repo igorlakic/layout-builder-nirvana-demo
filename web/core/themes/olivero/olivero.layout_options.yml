@@ -1,0 +1,19 @@
+layout_option_definitions:
+  layout_background:
+    title: 'Background'
+    inline: false
+    description: 'Set the background color.'
+    default: lyt--bg-green
+    plugin: layout_options_class_radios  # A plugin that handles select form based class attributes.
+    multi: false  #select multiple options?
+    options:    # The select options shown
+      lyt--bg-green: 'Green (default)'
+      lyt--bg-white: 'White'
+    layout: true  # allow this option to be using in the overall layout container
+    regions: false # allow this option to be used in any regions
+    weight: 0 #optional -  Define option order in configuration form.
+layout_options:
+  layout_onecol_section:
+    layout_background: {}
+  simple_cards:
+    layout_background: {}

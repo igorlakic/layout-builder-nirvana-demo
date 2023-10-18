@@ -1,0 +1,22 @@
+uuid: 1c270a2d-e92a-4b4d-9875-2e9f6cae86f6
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.title
+    - field.field.block_content.title.field_b_title_title
+id: block_content.title.default
+targetEntityType: block_content
+bundle: title
+mode: default
+content:
+  field_b_title_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  langcode: true

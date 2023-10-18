@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+
+{#
+/**
+ * Classes from "Layout Options" are also imported here!
+ */
+#}
+{%
+  set classes = [
+    'layout',
+    'layout--simple-cards',
+  ]
+%}
+
+{{ attach_library('olivero/layout-simple-cards') }}
+{{ attach_library('olivero/layouts') }}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    <div class="layout--simple-cards-inner lyt--default-rules">
+
+      {% if region_attributes.title and content.title is not empty %}
+        <div class="layout__simple-cards-title-section">
+          <div{{ region_attributes.title.addClass('layout__region', 'layout__region--simple-cards-title', 'lyt-row', 'lyt-row--centered') }}>
+            {{ content.title }}
+          </div>
+        </div>
+      {% endif %}
+
+      {% if region_attributes.cards and content.cards is not empty %}
+        <div class="layout__simple-cards-main-section">
+
+          <div{{ region_attributes.cards.addClass('layout__region', 'layout__region--simple-cards-cards', 'lyt-row', 'lyt-row--thirds') }}>
+            {{ content.cards }}
+          </div>
+
+        </div>
+      {% endif %}
+
+    </div>
+
+  </div>
+{% endif %}

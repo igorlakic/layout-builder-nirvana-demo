@@ -1,0 +1,26 @@
+.title {
+  overflow: hidden;
+}
+
+.title__inner {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.title__title {
+  font-size: 2rem;
+  grid-column: 1/span 6;
+  margin-bottom: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 105rem) {
+  .title__title {
+    font-size: 3rem;
+    grid-column: 3/span 8;
+    padding-right: 3rem;
+    padding-left: 3rem;
+  }
+}

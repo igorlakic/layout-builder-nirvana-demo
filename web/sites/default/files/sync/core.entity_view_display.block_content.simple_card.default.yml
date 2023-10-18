@@ -1,0 +1,45 @@
+uuid: 9aec3453-0b82-4bf0-aa35-aafe8863e641
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card
+    - field.field.block_content.simple_card.field_b_link
+    - field.field.block_content.simple_card.field_b_sc_short_text
+    - field.field.block_content.simple_card.field_b_title
+  module:
+    - link
+id: block_content.simple_card.default
+targetEntityType: block_content
+bundle: simple_card
+mode: default
+content:
+  field_b_link:
+    type: link_separate
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_b_sc_short_text:
+    type: basic_string
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_b_title:
+    type: string
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  langcode: true

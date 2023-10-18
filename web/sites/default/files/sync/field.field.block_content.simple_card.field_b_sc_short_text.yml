@@ -1,0 +1,19 @@
+uuid: 16c8ba14-8e6e-417a-95ea-9053ff4a7614
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.simple_card
+    - field.storage.block_content.field_b_sc_short_text
+id: block_content.simple_card.field_b_sc_short_text
+field_name: field_b_sc_short_text
+entity_type: block_content
+bundle: simple_card
+label: 'Short Text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

@@ -1,0 +1,30 @@
+uuid: f44f8a6c-46d8-4d10-849a-7629d8a70baf
+langcode: en-gb
+status: true
+dependencies:
+  config:
+    - block_content.type.title
+    - field.field.block_content.title.field_b_title_title
+id: block_content.title.default
+targetEntityType: block_content
+bundle: title
+mode: default
+content:
+  field_b_title_title:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true

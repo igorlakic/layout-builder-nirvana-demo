@@ -1,0 +1,8 @@
+uuid: 48985f44-042d-4aa9-80e2-d0a7c8d87bf3
+langcode: en-gb
+status: true
+dependencies: {  }
+id: simple_card
+label: 'Simple Card'
+revision: 1
+description: ''

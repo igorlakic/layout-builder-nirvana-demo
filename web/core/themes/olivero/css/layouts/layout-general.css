@@ -1,0 +1,51 @@
+.lyt--default-rules {
+  width: 100%;
+  max-width: 56.40625rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.lyt-row {
+  display: grid;
+  grid-row-gap: 0.625rem;
+  grid-column-gap: 0.625rem;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+@media (min-width: 105rem) {
+  .lyt-row {
+    grid-template-columns: repeat(12,1fr);
+  }
+}
+
+.lyt-row--thirds > * {
+  grid-column: auto/span 6;
+}
+
+@media (min-width: 105rem) {
+  .lyt-row--thirds > * {
+    grid-column: auto/span 4;
+  }
+}
+
+.lyt-row--centered > * {
+  grid-column: 1/span 6;
+}
+
+@media (min-width: 105rem) {
+  .lyt-row--centered > * {
+    grid-column: 3/span 8;
+  }
+}
+
+.lyt--orange-color {
+  background-color: lightsalmon;
+}
+
+.lyt--bg-green {
+  background-color: lightgreen;
+}
+
+.lyt--bg-white {
+  background-color: white;
+}

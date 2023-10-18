@@ -1,0 +1,94 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in ftont of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+
+{# Title #}
+{% if content.field_b_title.0 %}
+  {% set title = content.field_b_title.0 %}
+{% endif %}
+
+{# Text #}
+{% if content.field_b_sc_short_text.0 %}
+  {% set text = content.field_b_sc_short_text.0 %}
+{% endif %}
+
+{# Link #}
+{% if content.field_b_link.0['#url'] %}
+  {% set link = content.field_b_link.0['#url'] %}
+  {% set link_url = link.toString() %}
+
+  {% if content.field_b_link.0['#title'] %}
+    {% set link_text = content.field_b_link.0['#title'] %}
+  {% else %}
+    {% set link_text = "Read more"|t %}
+  {% endif %}
+{% endif %}
+
+{%
+  set classes = [
+    'simple-card',
+    'block',
+    'block-' ~ configuration.provider|clean_class,
+    'block-' ~ plugin_id|clean_class,
+  ]
+%}
+
+{{ attach_library('olivero/simple-card') }}
+
+<div{{ attributes.addClass(classes) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {% if cta_url or title or tag %}
+    <div class="simple-card__content">
+
+      {% if title %}
+        <h3 class="simple-card__title h5">
+          {{ title }}
+        </h3>
+      {% endif %}
+
+      {% if text %}
+        <p class="simple-card__text">
+          {{ text }}
+        </p>
+      {% endif %}
+
+      {% if link_url %}
+        <div class="simple-card__read-more-wrapper">
+          <a class="simple-card__read-more" href="{{ link_url }}">
+            <span class="simple-card__read-more-label">{{ link_text }}</span>
+          </a>
+        </div>
+      {% endif %}
+
+    </div>
+  {% endif %}
+
+</div>
+
+{{ content|cache_metadata }}

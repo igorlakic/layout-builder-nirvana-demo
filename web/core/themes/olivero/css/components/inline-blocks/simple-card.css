@@ -1,0 +1,49 @@
+.simple-card {
+  height: 100%;
+  padding: 1rem;
+  transition: all 0.3s ease-in;
+  background-color: lightgray;
+}
+
+.simple-card:hover,
+.simple-card:focus-within {
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  background-color: white;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.simple-card__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.simple-card__title {
+  margin-bottom: 1rem;
+}
+
+.simple-card__text {
+  margin-bottom: 1.3rem;
+  font-size: 1.3rem;
+}
+
+.simple-card__read-more-wrapper {
+  margin-top: auto;
+}
+
+.simple-card__read-more {
+  text-decoration: underline solid transparent 0.1em;
+  color: darkblue;
+  font-family: Sans-Serif;
+  font-size: 1rem;
+  font-weight: normal;
+  text-underline-offset: 0.1em;
+}
+
+.simple-card:hover .simple-card__read-more,
+.simple-card:focus-within .simple-card__read-more {
+  transition: all 0.3s ease-in;
+  text-decoration: underline solid darkkhaki 0.1em;
+  text-underline-offset: 0.1em;
+}
